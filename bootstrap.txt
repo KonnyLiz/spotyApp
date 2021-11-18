@@ -1,0 +1,15 @@
+consola:    
+    npm install bootstrap --save
+    npm install jquery --save
+    npm install @popperjs --save
+
+en angular.jon pegar:
+"styles": [
+            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "src/styles.css"
+        ],
+"scripts": [
+    "node_modules/jquery/dist/jquery.slim.min.js",
+    "node_modules/@popperjs/core/dist/umd/popper.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+]
