@@ -8,6 +8,7 @@ import { SpotifyService } from '../../services/spotify.service';
   ]
 })
 export class SearchComponent implements OnInit {
+  loading: boolean = false;
 
   artistas: any[] = [];
 
@@ -19,11 +20,12 @@ export class SearchComponent implements OnInit {
   }
 
   buscar(txt: string) {
-    console.log(txt);
+    this.loading = true;
     this.spotify.searchArtista(txt)
       .subscribe((data : any) => {
         console.log(data);
         this.artistas = data;
+        this.loading = false;
       })
   }
 

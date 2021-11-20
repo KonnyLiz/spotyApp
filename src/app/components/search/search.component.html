@@ -3,5 +3,5 @@
         <input #txt type="text" (keyup)="buscar(txt.value)" class="form-control" placeholder="Buscar artista">
     </div>
 </div>
-
-<app-cards [items]="artistas"></app-cards>
+<app-loading *ngIf="loading"></app-loading>
+<app-cards *ngIf="!loading" [items]="artistas"></app-cards>
