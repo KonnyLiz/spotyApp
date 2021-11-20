@@ -13,3 +13,12 @@ en angular.jon pegar:
     "node_modules/@popperjs/core/dist/umd/popper.min.js",
     "node_modules/bootstrap/dist/js/bootstrap.min.js"
 ]
+
+******* para fontawesome
+npm install --save @fortawesome/fontawesome-free
+
+angular.json:
+"node_modules/bootstrap/dist/js/bootstrap.min.js"
+"node_modules/@fortawesome/fontawesome-free/js/brands.js",
+"node_modules/ @fortawesome/fontawesome-free/js/solid.js",
+"node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"
