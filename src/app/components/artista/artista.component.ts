@@ -12,25 +12,37 @@ export class ArtistaComponent {
 
   loading: boolean = true;
   artista: any = {};
+  tracks: any[] = [];
 
   constructor(
     private acrRoute: ActivatedRoute,
-    private spotyfy: SpotifyService
+    private spotify: SpotifyService
   ) {
     this.loading = true;
 
     this.acrRoute.params.subscribe(params => {
       this.getArtista(params['id']);
+      this.getTopTracks(params['id']);
     });
   }
 
   getArtista(id: string) {
     this.loading = true;
 
-    this.spotyfy.getArtista(id).subscribe(res => {
+    this.spotify.getArtista(id).subscribe(res => {
       console.log(res);
       this.artista = res;
-      
+
+      this.loading = false;
+    })
+  }
+
+  getTopTracks(id: string) {
+    this.loading = true;
+    this.spotify.getTopTracks(id).subscribe(res => {
+      console.log(res);
+      this.tracks = res;
+
       this.loading = false;
     })
   }

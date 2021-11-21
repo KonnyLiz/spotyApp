@@ -15,3 +15,33 @@
         </button>
     </div>
 </div>
+
+<div class="row m-3">
+    <div class="col">
+        <table class="table table-dark table-borderless table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Cancion</th>
+                    <th scope="col">vista previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of tracks">
+                    <td>
+                        <img [src]="t.album.images | noimage" class="img-thumb">
+                    </td>
+                    <td> {{ t.album.name }} </td>
+                    <td> {{ t.name }} </td>
+                    <td>
+                        <!-- nueva etiqueta html 5 para audios -->
+                        <!-- <audio [src]="t.preview_url" controls></audio> -->
+                        <!-- <iframe [src]="track.uri | domseguro: 'https://open.spotify.com/embed?uri'" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+                        <iframe [src]="t.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
